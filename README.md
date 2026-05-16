@@ -1,67 +1,83 @@
 # ⚒️ ForgeShare | The Artisan Guild Rental Platform
 
-**ForgeShare** is a high-authority, industrial-grade brutalist interface designed for the physical-to-digital handover of artisanal tools. It serves as a premium marketplace for makers, craftsmen, and guilds to share high-end gear with a seamless, professional workflow.
+**ForgeShare** is a high-authority, industrial-grade brutalist platform designed for the physical-to-digital handover of artisanal tools. It serves as a premium marketplace for makers, craftsmen, and guilds to share high-end gear with a seamless, professional workflow.
 
 ---
 
-## 🏗️ Design Philosophy
-The frontend is built with a **Brutalist-Industrial aesthetic**, focusing on raw authority, cinematic transitions, and high-impact layouts. It avoids the "generic SaaS" look in favor of a bespoke, artisanal retail experience.
+## 🏛️ System Architecture
+ForgeShare is built as a decoupled Full-Stack application, ensuring high performance, real-time interactivity, and cinematic user experiences.
 
-## 🚀 Key Features
-- **Cinematic Marketplace:** A vertical responsive stack for discovering high-end artisanal gear.
-- **Industrial Action Terminal:** A robust booking system with status handshakes for "returned" and "completed" states.
-- **Maker Stories:** A dedicated editorial section highlighting community members and "The Craft".
-- **Admin Command Center:** High-level dashboard for managing users, content, and tool listings.
-- **Adaptive Onboarding:** Multi-step identity verification and profile professionalization.
-- **Wishlist & History:** Personal gear archives and rental lifecycle tracking.
-
-## 🛠️ Tech Stack
-- **Core:** [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Styling:** [Tailwind CSS 4.0](https://tailwindcss.com/) (Ultra-modern industrial tokens)
-- **Motion:** [GSAP](https://greensock.com/gsap/) & [Framer Motion](https://www.framer.com/motion/) for kinetic transitions.
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Routing:** [React Router 7](https://reactrouter.com/)
-- **API:** Axios with centralized service architecture.
-
-## 📂 Architecture
 ```text
-src/
-├── components/      # Atomic UI modules (Navbar, Footer, Modals)
-│   ├── auth/        # Authentication-specific components
-│   ├── landing/     # Hero and marketing sections
-│   └── marketplace/ # Gear cards and search filters
-├── pages/           # High-level views (Profile, Marketplace, Admin)
-├── services/        # API wrapper and backend integration
-├── context/         # Global state (Auth, User Session)
-└── assets/          # Brand identity and cinematic media
+ForgeShare/
+├── frontend/        # React 19 + Vite + Tailwind 4.0 (The Interface)
+└── backend/         # Node.js + Express + MongoDB + Socket.io (The Engine)
 ```
 
-## ⚙️ Getting Started
+---
+
+## 🎨 Frontend (The Interface)
+The interface follows a **Brutalist-Industrial aesthetic**, focusing on raw authority and kinetic motion.
+
+- **Tech Stack:** [React 19](https://react.dev/), [Vite](https://vitejs.dev/), [Tailwind CSS 4.0](https://tailwindcss.com/), [GSAP](https://greensock.com/gsap/), [Framer Motion](https://www.framer.com/motion/).
+- **Key Features:**
+    - **Cinematic Marketplace:** Vertical responsive stack for discovering high-end gear.
+    - **Industrial Action Terminal:** Robust booking UI with lifecycle status handshakes.
+    - **Editorial Content:** Integrated "Maker Stories" and "The Craft" sections.
+    - **Adaptive Onboarding:** Multi-step identity verification and profile building.
+
+---
+
+## ⚙️ Backend (The Engine)
+A robust RESTful API with real-time capabilities to power the rental lifecycle.
+
+- **Tech Stack:** Node.js, Express, MongoDB ([Mongoose](https://mongoosejs.com/)), [Socket.io](https://socket.io/), [Cloudinary](https://cloudinary.com/), [Nodemailer](https://nodemailer.com/).
+- **Key Features:**
+    - **Real-time Lifecycle:** Live status updates for tool handovers (Lent -> Received -> Returned).
+    - **Secure Auth:** JWT-based sessions with Bcrypt protection and password recovery.
+    - **Media Engine:** Automated industrial image processing via Multer + Cloudinary.
+    - **Email Infrastructure:** Automated security alerts and rental notifications.
+    - **Admin Suite:** Comprehensive endpoints for user and content moderation.
+
+---
+
+## 🚀 Full-Stack Features
+- **Physical-to-Digital Handover:** A secure handshake protocol for physical gear rental tracking.
+- **Artisan Ecosystem:** Centralized profile management for lenders and borrowers.
+- **Trust & Safety:** Integrated insurance flows, rental agreements, and safety documentation.
+- **Industrial Dashboard:** Real-time analytics and management for admins.
+
+---
+
+## 🛠️ Getting Started
 
 ### Prerequisites
 - Node.js (Latest LTS)
-- npm or yarn
+- MongoDB Instance (Local or Atlas)
+- Cloudinary API Credentials
 
 ### Installation
-1. Navigate to the frontend directory:
+
+1. **Clone the Repository:**
    ```bash
-   cd frontend
+   git clone <repository-url>
+   cd Project_1
    ```
-2. Install dependencies:
+
+2. **Backend Setup:**
    ```bash
+   cd backend
    npm install
-   ```
-3. Create a `.env` file (if required) and add your backend API URL.
-4. Start the development server:
-   ```bash
+   # Create .env and configure MONGO_URI, JWT_SECRET, CLOUDINARY_URL, etc.
    npm run dev
    ```
 
-### Deployment
-The project is configured for seamless deployment on **Vercel** or **Netlify**.
-```bash
-npm run build
-```
+3. **Frontend Setup:**
+   ```bash
+   cd ../frontend
+   npm install
+   # Create .env and configure VITE_API_URL
+   npm run dev
+   ```
 
 ---
 
