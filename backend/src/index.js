@@ -61,6 +61,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'API Working Fine'
+  });
+});
+
 // Route files
 const auth = require('./routes/auth');
 const users = require('./routes/users');
