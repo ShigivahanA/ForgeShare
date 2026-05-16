@@ -68,6 +68,7 @@ app.get('/', (req, res) => {
   });
 });
 
+
 // Route files
 const auth = require('./routes/auth');
 const users = require('./routes/users');
